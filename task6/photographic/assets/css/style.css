@@ -337,11 +337,11 @@ h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: #fff;
+  color: #820000;
 }
 
 #hero h2 {
-  color: #eee;
+  color: #820000;
   margin-bottom: 10px;
   font-size: 24px;
   font-weight: 300;
@@ -370,14 +370,14 @@ h6 {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
-    color: green;
+    
   }
 
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
-    color: green;
+    
   }
 }
 
@@ -411,7 +411,6 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #d43076;
   bottom: 0;
   left: 0;
 }
@@ -661,6 +660,11 @@ section {
   border-radius: 8px;
   text-align: center;
   z-index: 1;
+}
+.services .image {
+  background: url("../img/bp.png") center center no-repeat;
+  background-size: cover;
+  min-height: 400px;
 }
 
 .services .icon-box::before {
@@ -965,7 +969,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   font-family: "Playfair Display", serif;
-  color: #3c6387;
+  color: #3c6387 ;
 }
 
 .contact .social-links {
@@ -1064,7 +1068,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #d43076;
+  background: #03C988;
   border: 0;
   padding: 10px 24px;
   color: #fff;
