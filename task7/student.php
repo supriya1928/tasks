@@ -10,33 +10,50 @@
 </head>
 <body>
 	<?php
-
 	$ipadd="localhost";
 	$username="root";
 	$password="";
 	$dbname="student";
-
 	$conn = mysqli_connect($ipadd,$username,$password,$dbname);
-	$quary = "select * from student_info";
-	$fetchData = mysqli_query($conn,$quary);
+	if(isset($POST['submit']))
+	{
+		$fName = $_POST['fname'];
+		$lName = $_POST['lname'];
+		$sContact = $_POST['contact'];
+		$sEmail = $_POST['email'];
+		$sAddress = $_POST['address'];
+		$sDate = $_POST['date']
+		$studentDetails = "insert into `student_info`(`S_ID`, `S_NAME`, `S_Contact`, 'S_Email', `S_Address`) VALUES ('$fName','$lName','$sEmail','sContact','sAddress')";
+		if(mysqli_query($con,$studentDetails)){
+        echo "Success";
+    }
+    else{
+        echo "Failed";
+    }
+
+	}
+	
 	?>
 	<center><h2>Registration Form</h2>
 	<form action="localhost/development/student.php" target="#">
 		<label for="fname"><b>First name:</b></label>
-  		<input type="text" id="fname" name="fname" value="">
+  			<input method='post' type="text" id="fname" name="fname" value="">
   		<label for="lname"><b>Last name:</b></label>
-  		<input type="text" id="lname" name="lname" value="">
+  			<input method='post' type="text" id="lname" name="lname" value="">
   		<br><br>
   		<label for="contact"><b>Contact:</b></label>
-  		<input type="text" id="contact" name="contact" value="">
-  		 <label for="email"><b>Email:</b></label>  
- 		<input type="text" placeholder="Enter Email" name="email" required>  
+  			<input method='post' type="text" id="contact" name="contact" value="">
+  		<label for="email"><b>Email:</b></label>  
+ 			<input method='post' type="text" placeholder="Enter Email" name="email" required>  
   		<br><br>
   		<label for="text"><b>Address:</b></label>
-		<textarea rows="5" cols="50" name="" form="">
-		</textarea>
+		<textarea method='post'rows="5" cols="50" name="address" form="">
+			</textarea>
 		<br><br>
-  		<input type="submit" value="Submit">
+		<label for="birthday"><b>Date:</b></label>
+			<input method='post' type="date" id="birthday" name="date">
+
+  		<input method='post' type="submit" value="Submit">
 	</form>
 </center>
 	<br>
@@ -51,7 +68,7 @@
 		</tr>
 		<tbody>
 			<?php
-				while ($fetchData1=mysqli_fetch_array($fetchData)) {
+				while ($fetchData1=mysqli_fetch_array($studentDetails)) {
 				?>
 					<tr>
 						<td><?php echo $fetchData1['S_ID']; ?></td>
